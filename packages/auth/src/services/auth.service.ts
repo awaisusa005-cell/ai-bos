@@ -120,7 +120,7 @@ export class AuthService {
   }
 
   async refreshTokens(refreshToken: string): Promise<AuthTokens> {
-    const payload = this.tokenService.verifyRefreshToken(refreshToken);
+    const decoded = this.tokenService.verifyRefreshToken(refreshToken);
 
     const session = await prisma.session.findUnique({
       where: { refreshToken },
@@ -132,6 +132,9 @@ export class AuthService {
 
     // Delete old session
     await prisma.session.delete({ where: { id: session.id } });
+
+    // Strip JWT metadata before re-signing
+    const { iat, exp, ...payload } = decoded as TokenPayload & { iat?: number; exp?: number };
 
     const newTokens = this.generateTokens(payload);
     await this.saveSession(payload.userId, newTokens.refreshToken);
