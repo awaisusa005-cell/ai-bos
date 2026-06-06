@@ -1,0 +1,20 @@
+{
+  "name": "@ai-bos/integrations",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src/",
+    "clean": "rm -rf dist .turbo"
+  },
+  "dependencies": {
+    "@ai-bos/shared": "workspace:*"
+  },
+  "devDependencies": {
+    "@ai-bos/eslint-config": "workspace:*",
+    "typescript": "^5.3.0"
+  }
+}
