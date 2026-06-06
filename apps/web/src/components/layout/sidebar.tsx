@@ -6,6 +6,7 @@ import { clsx } from 'clsx';
 import {
   LayoutDashboard,
   Bot,
+  Brain,
   Zap,
   DollarSign,
   Megaphone,
@@ -21,6 +22,7 @@ import { useState } from 'react';
 
 const navItems = [
   { label: 'Dashboard', href: '/dashboard', icon: LayoutDashboard },
+  { label: 'AI Brain', href: '/dashboard/ai-brain', icon: Brain },
   { label: 'AI Employees', href: '/dashboard/ai-employees', icon: Bot },
   { label: 'Automations', href: '/dashboard/automations', icon: Zap },
   { label: 'Revenue', href: '/dashboard/revenue', icon: DollarSign },

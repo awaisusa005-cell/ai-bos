@@ -15,6 +15,7 @@
     "@ai-bos/database": "workspace:*",
     "@ai-bos/shared": "workspace:*",
     "@ai-bos/ai": "workspace:*",
+    "@ai-bos/ai-core": "workspace:*",
     "@ai-bos/workflows": "workspace:*",
     "@ai-bos/integrations": "workspace:*",
     "cors": "^2.8.5",
